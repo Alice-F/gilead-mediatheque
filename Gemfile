@@ -28,11 +28,8 @@ gem 'redis', '~> 4.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'devise'
-
 gem 'autoprefixer-rails'
-gem 'font-awesome-sass'
-gem 'simple_form'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
@@ -68,7 +65,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # BACK
 gem 'pundit'
+gem 'devise'
 
 # FRONT
 gem 'slim-rails'
 gem 'turbolinks_render'
+gem 'font-awesome-sass'
+gem 'simple_form'
