@@ -71,3 +71,4 @@ gem 'pundit'
 
 # FRONT
 gem 'slim-rails'
+gem 'turbolinks_render'
