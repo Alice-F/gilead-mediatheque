@@ -68,7 +68,6 @@ gem 'pundit'
 gem 'devise'
 gem 'rails-i18n'
 gem 'devise-i18n'
-gem 'devise-security' # passwords expiration date / https://github.com/devise-security/devise-security, https://gist.github.com/lorenadl/851e19a75d68182e08aa199b78c0ab43
 
 # FRONT
 gem 'slim-rails'
