@@ -68,6 +68,7 @@ gem 'pundit'
 gem 'devise'
 gem 'rails-i18n'
 gem 'devise-i18n'
+gem 'devise-security'
 
 # FRONT
 gem 'slim-rails'
