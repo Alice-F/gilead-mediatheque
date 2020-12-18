@@ -7,4 +7,11 @@ Rails.application.routes.draw do
   end
 
   root to: 'pages#home'
+
+  # -------- ADMIN ROUTES ---------
+  authenticate :user, ->(user) { user.admin } do
+    namespace :admin do
+      resources :users, only: %i[index create]
+    end
+  end
 end
