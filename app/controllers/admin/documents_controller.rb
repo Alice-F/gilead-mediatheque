@@ -1,9 +1,6 @@
 class Admin::DocumentsController < ApplicationController
-  before_action :find_document, only: %i[show edit update]
+  before_action :find_document, only: %i[edit update]
   before_action :find_document_with_document_id, only: %i[validate]
-
-  def show
-  end
 
   def validate
     @document.validation_at = DateTime.now
