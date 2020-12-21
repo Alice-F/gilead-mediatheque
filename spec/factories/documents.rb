@@ -3,7 +3,7 @@ FactoryBot.define do
     title { "MyString" }
     language { "MyString" }
     usage { "MyText" }
-    validation_at { "2020-12-21 11:20:31" }
+    validation_at { "2020-12-21 11:47:15" }
     format { "MyString" }
   end
 end
