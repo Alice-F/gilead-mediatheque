@@ -4,7 +4,7 @@ class CreateDocuments < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :language
       t.text :usage
-      t.datetime :validation_at, precision: 6
+      t.datetime :validation_at
       t.string :format
 
       t.timestamps
