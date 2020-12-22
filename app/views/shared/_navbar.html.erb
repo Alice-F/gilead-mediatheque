@@ -37,11 +37,6 @@
         <li class="nav-item">
           <%= link_to "Mon compte", edit_user_registration_path, class: "nav-link" %>
         </li>
-        <% if current_user.admin? %>
-          <li class="nav-item">
-            <%= link_to "Nouveau document", new_admin_document_path, class: "nav-link" %>
-          </li>
-        <% end %>
       </ul>
     </div>
   </div>
