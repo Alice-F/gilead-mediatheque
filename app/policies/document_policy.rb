@@ -1,9 +1,9 @@
 class DocumentPolicy < ApplicationPolicy
-  class Scope < Scope
-    def show
+    def show?
       true
     end
 
+  class Scope < Scope
     def resolve
       scope.all
     end
