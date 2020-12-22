@@ -5,7 +5,7 @@ class Admin::DocumentsController < ApplicationController
   def validate
     @document.validation_at = DateTime.now
     if @document.save
-      redirect_to admin_document_path(@document)
+      redirect_to document_path(@document)
     else
       render :show
     end
@@ -20,7 +20,7 @@ class Admin::DocumentsController < ApplicationController
     @document = Document.new(document_params)
     authorize([:admin, @document])
     if @document.save
-      redirect_to admin_document_path(@document)
+      redirect_to document_path(@document)
     else
       render :new
     end
@@ -31,7 +31,7 @@ class Admin::DocumentsController < ApplicationController
 
   def update
     if @document.update(document_params)
-      redirect_to admin_document_path(@document)
+      redirect_to document_path(@document)
     else
       render :edit
     end
