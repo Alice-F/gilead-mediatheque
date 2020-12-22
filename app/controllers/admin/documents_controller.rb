@@ -5,7 +5,7 @@ class Admin::DocumentsController < ApplicationController
   def validate
     @document.validation_at = DateTime.now
     if @document.save
-      redirect_to document_path(@document)
+      redirect_to documents_path
     else
       render :show
     end
