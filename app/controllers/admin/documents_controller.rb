@@ -1,14 +1,11 @@
 class Admin::DocumentsController < ApplicationController
-  before_action :find_document, only: %i[show edit update]
+  before_action :find_document, only: %i[edit update]
   before_action :find_document_with_document_id, only: %i[validate]
-
-  def show
-  end
 
   def validate
     @document.validation_at = DateTime.now
     if @document.save
-      redirect_to admin_document_path(@document)
+      redirect_to documents_path
     else
       render :show
     end
@@ -23,7 +20,7 @@ class Admin::DocumentsController < ApplicationController
     @document = Document.new(document_params)
     authorize([:admin, @document])
     if @document.save
-      redirect_to admin_document_path(@document)
+      redirect_to document_path(@document)
     else
       render :new
     end
@@ -34,7 +31,7 @@ class Admin::DocumentsController < ApplicationController
 
   def update
     if @document.update(document_params)
-      redirect_to admin_document_path(@document)
+      redirect_to document_path(@document)
     else
       render :edit
     end
