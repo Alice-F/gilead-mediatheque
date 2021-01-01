@@ -1,5 +1,9 @@
 FactoryBot.define do
   factory :document do
+    after(:build) do |document|
+      document.attachment.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'gilead.png')), filename: 'gilead.png', content_type: 'image/png')
+    end
+
     title { "Vidéo" }
     language { "FR" }
     usage { "" }
