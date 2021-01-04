@@ -71,8 +71,25 @@ gem 'devise-i18n'
 gem 'devise-security'
 gem "aws-sdk-s3", require: false
 
+
+
 # FRONT
 gem 'slim-rails'
 gem 'turbolinks_render'
 gem 'font-awesome-sass'
 gem 'simple_form'
+
+# preview office files
+gem 'mini_magick', '~> 4.8'
+gem "activestorage-office-previewer"
+
+# # display and manipulate xls files
+# gem 'roo', '~> 2.8'
+# gem 'roo-xls'
+# gem 'roo-google'
+
+# # display and manipulate pdf files
+# gem "poppler"
+
+# # convert files to pdf or html // install libreoffice before
+# gem 'libreconv'
