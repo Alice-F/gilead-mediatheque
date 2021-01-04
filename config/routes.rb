@@ -8,10 +8,6 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :documents, only: %i[index show]
-
-  # resources :folders, only: %i[index show]
-
   # -------- ADMIN ROUTES ---------
   authenticate :user, ->(user) { user.admin } do
     namespace :admin do
@@ -19,7 +15,8 @@ Rails.application.routes.draw do
       resources :documents, only: %i[new create edit update] do
         patch :validate
       end
-      resources :folders, only: %i[new create]
     end
   end
+
+  resources :documents, only: %i[index show]
 end
