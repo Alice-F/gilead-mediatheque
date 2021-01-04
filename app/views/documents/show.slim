@@ -5,10 +5,18 @@
   p = @document.language
   p.mb-0 Droits d'utilisation:
   p = simple_format(@document.usage)
-  p.mb-0
-    span Pièce jointe
-    span = link_to rails_blob_path(@document.attachment, disposition: "attachment") do
-      i.fas.fa-file-download.pl-2
+
+.container
+  div
+    - if policy([:admin, @document]).validate?
+      = link_to 'Mettre en ligne', admin_document_validate_path(@document), method: :patch, class: "btn"
+    - if policy([:admin, @document]).edit?
+      = link_to 'Modifier', edit_admin_document_path(@document), class: "btn"
+    = link_to rails_blob_path(@document.attachment, disposition: "attachment") do
+      i.h-100.fas.fa-file-download.pl-2
+    //= link_to "#", data: {toggle: "modal", target: "#createFolderModal"} do
+      i.h-100.fas.fa-folder-plus.pl-2
+    //= render 'admin/folders/new'
 
 - if @document.format == "image"
   .container.d-flex-default
@@ -25,13 +33,6 @@
 - if @document.format == "other"
   .container.d-flex-default
     img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg"
-
-.container
-  div
-    - if policy([:admin, @document]).validate?
-      = link_to 'Mettre en ligne', admin_document_validate_path(@document), method: :patch, class: "btn"
-    - if policy([:admin, @document]).edit?
-      = link_to 'Modifier', edit_admin_document_path(@document), class: "btn"
 
 //- if @document.format == "xls"
   .container
