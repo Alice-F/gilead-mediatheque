@@ -83,3 +83,9 @@ production:
   database: gilead_mediatheque_production
   username: gilead_mediatheque
   password: <%= ENV['GILEAD_MEDIATHEQUE_DATABASE_PASSWORD'] %>
+
+staging:
+  <<: *default
+  database: gilead_mediatheque_staging
+  username: gilead_mediatheque
+  password: <%= ENV['GILEAD_MEDIATHEQUE_DATABASE_PASSWORD'] %>
