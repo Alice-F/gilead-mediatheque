@@ -5,40 +5,9 @@
   p = @document.language
   p.mb-0 Droits d'utilisation:
   p = simple_format(@document.usage)
-  p.mb-0
-    span Pièce jointe
-    span = link_to rails_blob_path(@document.attachment, disposition: "attachment") do
-      i.fas.fa-file-download.pl-2
 
-- if @document.format == "image"
-  .container.d-flex-default
-    = image_tag @document.attachment
-
-- if @document.format == "video"
-  .container.d-flex-default
-    = video_tag (url_for(@document.attachment) + "#t=0.5"), controls: true
-
-- if @document.format == "xls" || @document.format == "word" || @document.format == "ppt" || @document.format == "pdf"
-  .container.d-flex-default
-    = image_tag @document.attachment.preview(resize: "500x1000")
-
-- if @document.format == "other"
-  .container.d-flex-default
-    img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg"
-
-.container
   div
     - if policy([:admin, @document]).validate?
       = link_to 'Mettre en ligne', admin_document_validate_path(@document), method: :patch, class: "btn"
     - if policy([:admin, @document]).edit?
       = link_to 'Modifier', edit_admin_document_path(@document), class: "btn"
-
-//- if @document.format == "xls"
-  .container
-    //div = Roo::Spreadsheet.open(polymorphic_url(@document.attachment))
-    //div = Roo::Spreadsheet.open(polymorphic_url(@document.attachment)).info
-    //div = Roo::Spreadsheet.open(polymorphic_url(@document.attachment)).row(1)
-
-//- if @document.format == "pdf"
-  .container style="overflow: hidden; position: relative; padding-top: 100%;"
-    iframe src=url_for(@document.attachment) style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%;" frameBorder="0" controls=true

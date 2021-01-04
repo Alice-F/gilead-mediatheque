@@ -1,8 +1,4 @@
 class Document < ApplicationRecord
-  # require 'roo'
-  # require 'roo-xls'
-  # require 'roo-google'
-
   include DatetimeHelper
 
   LANGUAGES = %w[FR EN]
