@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :folder do
-    name { "MyString" }
+    name { "Communication financière" }
   end
 end
