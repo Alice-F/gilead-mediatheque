@@ -69,7 +69,7 @@ gem 'devise'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-security'
-# gem "aws-sdk-s3", require: false
+gem 'aws-sdk-s3', require: false
 
 # FRONT
 gem 'slim-rails'
